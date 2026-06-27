@@ -28,6 +28,7 @@ const benefits = [
     logoSub: "MGC",
     brandColor: "#ffd400",
     logoTextColor: "#1f2433",
+    titleColor: "#1f2433",
   },
   {
     id: "compose-oneplus",
@@ -51,6 +52,7 @@ const benefits = [
     logoSub: "COFFEE",
     brandColor: "#0054a6",
     logoTextColor: "#ffdd2d",
+    titleColor: "#0054a6",
   },
   {
     id: "starbucks-sizeup",

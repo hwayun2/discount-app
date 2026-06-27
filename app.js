@@ -86,7 +86,7 @@ function renderBenefits() {
       (benefit) => `
         <article
           class="benefit-card"
-          style="--accent:${benefit.accent}; --brand:${benefit.brandColor || benefit.accent}; --logo-text:${benefit.logoTextColor || "#ffffff"}"
+          style="--accent:${benefit.accent}; --brand:${benefit.brandColor || benefit.accent}; --logo-text:${benefit.logoTextColor || "#ffffff"}; --brand-title:${benefit.titleColor || benefit.brandColor || benefit.accent}"
         >
           <div class="brand-mark" aria-hidden="true">
             <strong>${benefit.logoText || benefit.brand.slice(0, 4)}</strong>

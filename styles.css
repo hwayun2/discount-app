@@ -529,7 +529,7 @@ h1 {
 .benefit-card h3 {
   margin-top: 8px;
   overflow: hidden;
-  color: var(--brand);
+  color: var(--brand-title);
   font-size: 16px;
   font-weight: 950;
   line-height: 1.16;
