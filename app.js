@@ -95,19 +95,17 @@ function renderBenefits() {
           <div class="benefit-content">
             <div class="card-topline">
               <span class="distance-pill">${benefit.distance}m</span>
-              <span>${benefit.category}</span>
               <span>${benefit.expiresAt}</span>
             </div>
-            <h3>${benefit.brand} ${benefit.branch}</h3>
-            <p class="benefit-title">${benefit.title}</p>
-            <p class="benefit-description">${benefit.description}</p>
+            <h3>${benefit.brand}</h3>
+            <p class="branch-name">${benefit.branch}</p>
+            <p class="benefit-title">${benefit.benefitLabel} · ${benefit.title}</p>
             <div class="benefit-meta">
-              <span>${benefit.benefitLabel}</span>
-              <span>${benefit.providerType}</span>
               <span>${benefit.provider}</span>
             </div>
           </div>
           <button class="open-app-button" type="button" data-benefit-id="${benefit.id}">
+            <span class="button-logo">${benefit.logoText || benefit.brand.slice(0, 2)}</span>
             <span>${benefit.appName}</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M8.75 5.75 15.25 12l-6.5 6.25" />
