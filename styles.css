@@ -474,6 +474,7 @@ h1 {
   background: var(--brand);
   color: var(--logo-text);
   text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
 .brand-mark strong {
@@ -590,8 +591,9 @@ h1 {
   place-items: center;
   overflow: hidden;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.22);
   font-size: 8px;
+  color: var(--logo-text);
   line-height: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
