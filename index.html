@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f5f7" />
+    <meta name="theme-color" content="#ffffff" />
     <title>혜택허브</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -12,15 +12,19 @@
       <header class="top-bar">
         <div class="brand-lockup">
           <div class="app-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M12 3.75 14.36 8.5l5.24.76-3.79 3.69.9 5.22L12 15.7l-4.71 2.47.9-5.22L4.4 9.26l5.24-.76L12 3.75Z" />
-            </svg>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span>
           </div>
           <div>
-            <p class="eyebrow">Nearby Benefits</p>
             <h1>혜택허브</h1>
           </div>
         </div>
+        <nav class="top-nav" aria-label="빠른 메뉴">
+          <a class="is-active" href="#benefits">Home</a>
+          <a href="#radiusTabs">Radius</a>
+          <a href="#benefits">Offers</a>
+        </nav>
         <button class="icon-button" id="locateButton" type="button" aria-label="내 위치 새로고침" title="내 위치 새로고침">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 4.25v2.1M12 17.65v2.1M19.75 12h-2.1M6.35 12h-2.1" />
@@ -30,14 +34,24 @@
         </button>
       </header>
 
+      <section class="hero-panel" aria-label="혜택허브 요약">
+        <div class="hero-copy">
+          <p class="eyebrow">PAY LESS AROUND YOU</p>
+          <h2>내 주변 할인, 결제 전에 바로 확인</h2>
+          <p>50m부터 전체까지 반경을 바꾸며 오늘 받을 수 있는 혜택을 모아봅니다.</p>
+        </div>
+        <div class="hero-phone" aria-hidden="true">
+          <div class="phone-screen">
+            <span class="tile tile-big">%</span>
+            <span class="tile">1+1</span>
+            <span class="tile">UP</span>
+            <span class="tile">₩</span>
+          </div>
+        </div>
+      </section>
+
       <section class="location-strip" aria-label="현재 위치">
         <div class="location-copy">
-          <span class="location-symbol" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M12 21s6.1-5.16 6.1-11.05A6.1 6.1 0 0 0 5.9 9.95C5.9 15.84 12 21 12 21Z" />
-              <circle cx="12" cy="9.95" r="2.25" />
-            </svg>
-          </span>
           <div>
             <strong id="locationName">강남역 11번 출구 근처</strong>
             <p id="locationMeta">샘플 데이터 기준 현재 위치</p>
@@ -56,7 +70,7 @@
         </label>
       </section>
 
-      <section class="radius-section" aria-label="지역 반경">
+      <section class="radius-section coral-band" aria-label="지역 반경">
         <div class="section-heading">
           <h2>내 위치 반경</h2>
           <p id="resultCount">0개 혜택</p>
@@ -72,7 +86,7 @@
         <button class="filter-chip" type="button" data-filter="coupon"><span aria-hidden="true">◌</span>쿠폰</button>
       </section>
 
-      <section class="benefit-list" id="benefitList" aria-label="내 주변 할인 리스트"></section>
+      <section class="benefit-list" id="benefits" aria-label="내 주변 할인 리스트"></section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>

@@ -10,7 +10,7 @@ let selectedRadius = 100;
 let selectedFilter = "all";
 
 const radiusTabs = document.querySelector("#radiusTabs");
-const benefitList = document.querySelector("#benefitList");
+const benefitList = document.querySelector("#benefits");
 const resultCount = document.querySelector("#resultCount");
 const savingSummary = document.querySelector("#savingSummary");
 const searchInput = document.querySelector("#searchInput");
@@ -84,9 +84,13 @@ function renderBenefits() {
   benefitList.innerHTML = visibleBenefits
     .map(
       (benefit) => `
-        <article class="benefit-card" style="--accent:${benefit.accent}">
+        <article
+          class="benefit-card"
+          style="--accent:${benefit.accent}; --brand:${benefit.brandColor || benefit.accent}; --logo-text:${benefit.logoTextColor || "#ffffff"}"
+        >
           <div class="brand-mark" aria-hidden="true">
-            <span>${benefitIcons[benefit.benefitType] || benefit.brand.slice(0, 1)}</span>
+            <strong>${benefit.logoText || benefit.brand.slice(0, 4)}</strong>
+            <small>${benefit.logoSub || benefitIcons[benefit.benefitType] || ""}</small>
           </div>
           <div class="benefit-content">
             <div class="card-topline">
