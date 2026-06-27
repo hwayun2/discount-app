@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>혜택허브</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">결제 전 혜택 확인</p>
+          <h1>혜택허브</h1>
+        </div>
+        <button class="icon-button" id="locateButton" type="button" aria-label="내 위치 새로고침" title="내 위치 새로고침">
+          <span aria-hidden="true">⌖</span>
+        </button>
+      </header>
+
+      <section class="location-strip" aria-label="현재 위치">
+        <div class="location-copy">
+          <span class="status-dot"></span>
+          <div>
+            <strong id="locationName">강남역 11번 출구 근처</strong>
+            <p id="locationMeta">샘플 데이터 기준 현재 위치</p>
+          </div>
+        </div>
+        <span class="saving-pill" id="savingSummary">예상 절감 1,900원</span>
+      </section>
+
+      <section class="search-section" aria-label="할인 검색">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="브랜드, 혜택, 앱 검색" autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="radius-section" aria-label="지역 반경">
+        <div class="section-heading">
+          <h2>내 위치 반경</h2>
+          <p id="resultCount">0개 혜택</p>
+        </div>
+        <div class="radius-tabs" id="radiusTabs" role="tablist" aria-label="반경 선택"></div>
+      </section>
+
+      <section class="quick-filters" aria-label="혜택 유형">
+        <button class="filter-chip is-active" type="button" data-filter="all">전체</button>
+        <button class="filter-chip" type="button" data-filter="discount">할인</button>
+        <button class="filter-chip" type="button" data-filter="oneplus">1+1</button>
+        <button class="filter-chip" type="button" data-filter="upgrade">사이즈업</button>
+        <button class="filter-chip" type="button" data-filter="coupon">쿠폰</button>
+      </section>
+
+      <section class="benefit-list" id="benefitList" aria-label="내 주변 할인 리스트"></section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./mockdata.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
