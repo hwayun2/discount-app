@@ -19,6 +19,13 @@ const locateButton = document.querySelector("#locateButton");
 const locationName = document.querySelector("#locationName");
 const locationMeta = document.querySelector("#locationMeta");
 
+const benefitIcons = {
+  discount: "%",
+  oneplus: "+",
+  upgrade: "↑",
+  coupon: "◌",
+};
+
 function formatMoney(value) {
   return new Intl.NumberFormat("ko-KR").format(value);
 }
@@ -49,7 +56,7 @@ function renderRadiusTabs() {
           data-radius="${radius.value}"
           aria-pressed="${radius.value === selectedRadius}"
         >
-          ${radius.label}
+          <span>${radius.label}</span>
         </button>
       `,
     )
@@ -66,6 +73,7 @@ function renderBenefits() {
   if (!visibleBenefits.length) {
     benefitList.innerHTML = `
       <article class="empty-state">
+        <span aria-hidden="true">⌕</span>
         <strong>선택한 조건에 맞는 혜택이 없어요.</strong>
         <p>반경을 넓히거나 검색어를 지우면 더 많은 샘플 혜택을 볼 수 있습니다.</p>
       </article>
@@ -77,10 +85,12 @@ function renderBenefits() {
     .map(
       (benefit) => `
         <article class="benefit-card" style="--accent:${benefit.accent}">
-          <div class="brand-mark" aria-hidden="true">${benefit.brand.slice(0, 1)}</div>
+          <div class="brand-mark" aria-hidden="true">
+            <span>${benefitIcons[benefit.benefitType] || benefit.brand.slice(0, 1)}</span>
+          </div>
           <div class="benefit-content">
             <div class="card-topline">
-              <span>${benefit.distance}m</span>
+              <span class="distance-pill">${benefit.distance}m</span>
               <span>${benefit.category}</span>
               <span>${benefit.expiresAt}</span>
             </div>
@@ -94,7 +104,10 @@ function renderBenefits() {
             </div>
           </div>
           <button class="open-app-button" type="button" data-benefit-id="${benefit.id}">
-            ${benefit.appName} 열기
+            <span>${benefit.appName}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M8.75 5.75 15.25 12l-6.5 6.25" />
+            </svg>
           </button>
         </article>
       `,

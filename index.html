@@ -3,24 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f5f7" />
     <title>혜택허브</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <header class="top-bar">
-        <div>
-          <p class="eyebrow">결제 전 혜택 확인</p>
-          <h1>혜택허브</h1>
+        <div class="brand-lockup">
+          <div class="app-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 3.75 14.36 8.5l5.24.76-3.79 3.69.9 5.22L12 15.7l-4.71 2.47.9-5.22L4.4 9.26l5.24-.76L12 3.75Z" />
+            </svg>
+          </div>
+          <div>
+            <p class="eyebrow">Nearby Benefits</p>
+            <h1>혜택허브</h1>
+          </div>
         </div>
         <button class="icon-button" id="locateButton" type="button" aria-label="내 위치 새로고침" title="내 위치 새로고침">
-          <span aria-hidden="true">⌖</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 4.25v2.1M12 17.65v2.1M19.75 12h-2.1M6.35 12h-2.1" />
+            <circle cx="12" cy="12" r="4.6" />
+            <circle cx="12" cy="12" r="1.15" />
+          </svg>
         </button>
       </header>
 
       <section class="location-strip" aria-label="현재 위치">
         <div class="location-copy">
-          <span class="status-dot"></span>
+          <span class="location-symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 21s6.1-5.16 6.1-11.05A6.1 6.1 0 0 0 5.9 9.95C5.9 15.84 12 21 12 21Z" />
+              <circle cx="12" cy="9.95" r="2.25" />
+            </svg>
+          </span>
           <div>
             <strong id="locationName">강남역 11번 출구 근처</strong>
             <p id="locationMeta">샘플 데이터 기준 현재 위치</p>
@@ -31,7 +48,10 @@
 
       <section class="search-section" aria-label="할인 검색">
         <label class="search-box">
-          <span aria-hidden="true">⌕</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="10.7" cy="10.7" r="5.95" />
+            <path d="m15.2 15.2 4.05 4.05" />
+          </svg>
           <input id="searchInput" type="search" placeholder="브랜드, 혜택, 앱 검색" autocomplete="off" />
         </label>
       </section>
@@ -45,11 +65,11 @@
       </section>
 
       <section class="quick-filters" aria-label="혜택 유형">
-        <button class="filter-chip is-active" type="button" data-filter="all">전체</button>
-        <button class="filter-chip" type="button" data-filter="discount">할인</button>
-        <button class="filter-chip" type="button" data-filter="oneplus">1+1</button>
-        <button class="filter-chip" type="button" data-filter="upgrade">사이즈업</button>
-        <button class="filter-chip" type="button" data-filter="coupon">쿠폰</button>
+        <button class="filter-chip is-active" type="button" data-filter="all"><span aria-hidden="true">⌘</span>전체</button>
+        <button class="filter-chip" type="button" data-filter="discount"><span aria-hidden="true">%</span>할인</button>
+        <button class="filter-chip" type="button" data-filter="oneplus"><span aria-hidden="true">+</span>1+1</button>
+        <button class="filter-chip" type="button" data-filter="upgrade"><span aria-hidden="true">↑</span>사이즈업</button>
+        <button class="filter-chip" type="button" data-filter="coupon"><span aria-hidden="true">◌</span>쿠폰</button>
       </section>
 
       <section class="benefit-list" id="benefitList" aria-label="내 주변 할인 리스트"></section>
